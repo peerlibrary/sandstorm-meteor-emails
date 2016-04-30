@@ -22,6 +22,7 @@ if __meteor_runtime_config__.SANDSTORM
   mkdirp = Npm.require 'mkdirp'
   fs = Npm.require 'fs'
   Future = Npm.require 'fibers/future'
+  Capnp = Npm.require 'capnp'
 
   # Make sure mail spool maildir directories exist.
   mkdirp.sync "#{MAIL_DIR}/new",
@@ -68,6 +69,7 @@ if __meteor_runtime_config__.SANDSTORM
       fs.unlinkSync "#{MAIL_DIR}/cur/#{path}"
 
     send: (options) ->
+      throw new Error "Not implemented yet."
 
   # Exported symbol.
   SandstormEmail = new SandstormEmailClass()
